@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Events</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h2>Signup Form</h2>
+    <form id="signupForm" onsubmit="displayFormData(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+            <option value="Pakistan">Pakistan</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Form Data:</h3>
+    <div id="formData"></div>
+    <hr> <br>
+
+    <h2>Item Details</h2>
+
+    <div class="item">
+        <h3>Item 1</h3>
+        <p>Some brief details about Item 1.</p>
+        <p class="item-details">Full details of Item 1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugit
+            voluptates officiis, ut architecto quisquam eos autem culpa asperiores quae.</p>
+        <a class="read-more" onclick="toggleDetails(event)">Read more</a>
+    </div>
+
+    <div class="item">
+        <h3>Item 2</h3>
+        <p>Some brief details about Item 2.</p>
+        <p class="item-details">Full details of Item 2.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugit
+            voluptates officiis, ut architecto quisquam eos autem culpa asperiores quae.</p>
+        <a class="read-more" onclick="toggleDetails(event)">Read more</a>
+    </div>
+
+    <div class="item">
+        <h3>Item 3</h3>
+        <p>Some brief details about Item 3.</p>
+        <p class="item-details">Full details of Item 3.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugit
+            voluptates officiis, ut architecto quisquam eos autem culpa asperiores quae.</p>
+        <a class="read-more" onclick="toggleDetails(event)">Read more</a>
+    </div>
+    <hr>
+    <h2>Student Details</h2>
+  
+  <form id="studentForm" onsubmit="addStudent(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" required>
+  
+    <input type="submit" value="Add Student">
+  </form>
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentData">
+      
+    </tbody>
+  </table>
+  
+  <form id="editForm" class="hidden-form" onsubmit="updateStudent(event)">
+    <h3>Edit Student</h3>
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" name="editName" required>
+  
+    <label for="editAge">Age:</label>
+    <input type="text" id="editAge" name="editAge" required>
+  
+    <input type="hidden" id="editRowId" name="editRowId">
+  
+    <input type="submit" value="Update">
+  </form> 
+  <br>
+  <h2>Modal Images</h2>
+
+  <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1507980668227-a52aa457699b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="Image 1" onclick="openModal('https://images.unsplash.com/photo-1507980668227-a52aa457699b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+  </div>
+
+  <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1587840924116-416c92e384b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60"
+          alt="Image 2" onclick="openModal('https://images.unsplash.com/photo-1587840924116-416c92e384b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60')">
+  </div>
+
+  <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1623850536715-d9f465e13ae4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60"
+          alt="Image 3" onclick="openModal('https://images.unsplash.com/photo-1623850536715-d9f465e13ae4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60')">
+  </div>
+
+  <div class="image-container">
+      <img src="https://images.unsplash.com/photo-1685696332250-a90ebd9e036d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60" alt="Image 4" onclick="openModal('https://images.unsplash.com/photo-1685696332250-a90ebd9e036d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fHhIeFlUTUhMZ09jfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60')">
+  </div>
+
+  <div id="myModal" class="modal">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+  </div>
+  <br>
+  <p id="myParagraph">This is the paragraph.</p>
+
+  <button onclick="zoomIn()">Zoom In (+)</button>
+  <button onclick="zoomOut()">Zoom Out (-)</button>
+    <script src="./index.js"></script>
+</body>
+
+</html>
